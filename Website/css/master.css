@@ -1,3 +1,4 @@
+/*Body width modified to fit standard 1200px width grid. Height modified to ensure even height of enclosed divs, based on window size.  */
 body, html {
     height: 100%;
     width: 1200px;
@@ -40,6 +41,7 @@ nav a:active {
     color: red;
 }
 
+/*titlebar encloses the main title header and the navbar, placing them at a fixed position at the top of the screen.*/
 .titlebar {
     position: fixed;
     top: 0;
@@ -51,19 +53,23 @@ nav a:active {
     z-index: 1;
 }
 
+/*Various sections split into boxes of height and width equal to the body height and width.*/
 .section {
     height: 100%;
     width: 100%;
 }
 
+/*First box. Should include logo, product image, product name, and perhaps a short tagline about the product.*/
 .mainTitle {
     background-color: rgba(0, 100, 18, 1);
 }
 
+/*Suggest using this section for a combination of slides that demonstrate and explain the purpose and functionality of the application.*/
 .productSlides {
     background-color: rgba(100, 0, 18, 1);
 }
 
+/*This section for the download links and information about the application.*/
 .downloads {
     background-color: black;
 }
@@ -72,6 +78,7 @@ nav a:active {
     background-color: rgba(0, 100, 18, 1);
 }
 
+/*This css is holding the place of whatever elements should be inside the various divs in the website. As the divs are filled in, custom classes may be more reasonable, or change the name of this class to avoid confusion post-release.*/
 .placeholderText {
     position: relative;
     left: 50%;
