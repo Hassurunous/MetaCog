@@ -25,9 +25,25 @@
         <!-- This section is recommended to be a collection of slides describing the purpose and functionality of the app, as well as community guidelines. -->
         <div id="about" class="section productSlides">
             <h2>Preview Pane Placeholder Title</h2>
-            <p class="placeholderText">
-                Product Preview Slider Tabs Here
-            </p>
+            <div class="container">
+                <button type="button" class="slideBtn prevBtn"><</button>
+                <button type="button" class="slideBtn   nextBtn">></button>
+                <p class="placeholderText">
+                    Product Preview Slider Tabs Here
+                </p>
+                <div class="sliderImg">
+                    <img src="img/fractal1.png" alt="" />
+                </div>
+                <div class="sliderImg hideImg">
+                    <img src="img/fractal2.png" alt="" />
+                </div>
+                <div class="sliderImg hideImg">
+                    <img src="img/fractal3.png" alt="" />
+                </div>
+                <div class="sliderImg hideImg">
+                    <img src="img/fractal4.png" alt="" />
+                </div>
+            </div>
         </div>
         <!-- App download icons here. -->
         <div id="download" class="section downloads">
@@ -43,10 +59,9 @@
                 Contact Information
             </p>
         </div>
-
-    <script src="js/main.js"></script>
     <!-- Imported jquery and handlebars in case those are required. Suggest removal if unused. -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="js/handlebars-v4.0.5.js"></script>
+    <script src="js/main.js"></script>
     </body>
 </html>

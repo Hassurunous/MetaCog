@@ -1,9 +1,10 @@
 /*Body width modified to fit standard 1200px width grid. Height modified to ensure even height of enclosed divs, based on window size.  */
 body, html {
     height: 100%;
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     margin: auto;
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 h1 {
@@ -67,6 +68,61 @@ nav a:active {
 /*Suggest using this section for a combination of slides that demonstrate and explain the purpose and functionality of the application.*/
 .productSlides {
     background-color: rgba(100, 0, 18, 1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.sliderImg {
+    display: inline-block;
+}
+
+.sliderImg img {
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+}
+
+.hideImg {
+    display: none;
+}
+
+.slideBtn {
+    -moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+	-webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+	box-shadow:inset 0px 34px 0px -15px #b54b3a;
+	background-color:#a73f2d;
+	border:1px solid #241d13;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #7a2a1d;
+}
+
+.slideBtn:hover {
+    background-color:#b34332;
+}
+
+.prevBtn {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+}
+
+.nextBtn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
 }
 
 /*This section for the download links and information about the application.*/
