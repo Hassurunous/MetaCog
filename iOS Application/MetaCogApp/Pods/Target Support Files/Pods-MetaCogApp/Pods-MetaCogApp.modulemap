@@ -1,0 +1,6 @@
+framework module Pods_MetaCogApp {
+  umbrella header "Pods-MetaCogApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
