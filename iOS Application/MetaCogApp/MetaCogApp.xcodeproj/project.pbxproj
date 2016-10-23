@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A3D3C91F5BDFB419F496E79 /* Pods_MetaCogApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F38C2B7FE84046D4825ED56 /* Pods_MetaCogApp.framework */; };
+		C6434F511DBD60B600DB7FB9 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6434F501DBD60B600DB7FB9 /* AddPostViewController.swift */; };
+		C6434F531DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */; };
+		C6434F551DBD74E800DB7FB9 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6434F541DBD74E800DB7FB9 /* Posts.swift */; };
 		CC9CB1391DB96EF4001AF6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */; };
 		CC9CB13B1DB96EF4001AF6C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */; };
 		CC9CB13E1DB96EF4001AF6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9CB13C1DB96EF4001AF6C5 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		7042ACC78A75E08F9C9FE7A6 /* Pods-MetaCogApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaCogApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetaCogApp/Pods-MetaCogApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9F38C2B7FE84046D4825ED56 /* Pods_MetaCogApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetaCogApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6434F501DBD60B600DB7FB9 /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsAndCommentsController.swift; sourceTree = "<group>"; };
+		C6434F541DBD74E800DB7FB9 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		CC9CB1351DB96EF4001AF6C5 /* MetaCogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaCogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,11 +97,13 @@
 				CCC876211DB9796C00F93E81 /* CustomPostCell.swift */,
 				CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */,
 				CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */,
+				CC9CB14A1DB973FB001AF6C5 /* MainViewController.swift */,
+				C6434F501DBD60B600DB7FB9 /* AddPostViewController.swift */,
+				C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */,
 				CC9CB13C1DB96EF4001AF6C5 /* Main.storyboard */,
 				CC9CB13F1DB96EF4001AF6C5 /* Assets.xcassets */,
 				CC9CB1411DB96EF4001AF6C5 /* LaunchScreen.storyboard */,
 				CC9CB1441DB96EF4001AF6C5 /* Info.plist */,
-				CC9CB14A1DB973FB001AF6C5 /* MainViewController.swift */,
 			);
 			path = MetaCogApp;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CCC876261DB9879F00F93E81 /* User.swift */,
+				C6434F541DBD74E800DB7FB9 /* Posts.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -237,7 +246,10 @@
 				CC9CB14B1DB973FB001AF6C5 /* MainViewController.swift in Sources */,
 				CC9CB13B1DB96EF4001AF6C5 /* ViewController.swift in Sources */,
 				CCC876271DB9879F00F93E81 /* User.swift in Sources */,
+				C6434F531DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift in Sources */,
+				C6434F511DBD60B600DB7FB9 /* AddPostViewController.swift in Sources */,
 				CC9CB1391DB96EF4001AF6C5 /* AppDelegate.swift in Sources */,
+				C6434F551DBD74E800DB7FB9 /* Posts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UITableViewController {
+    //MainViewController Class is a UITableViewController sub-class which will later dispaly the users posts.
+    
+    @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
+        
+    }
+    
+        
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +28,24 @@ class MainViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "postsAndCommentsSegue" {
+                print("users want to add some comments")
+            } else if identifier == "addPostsSegue"{
+                print("users want to add some posts")
+            }else if identifier == "Cancel" {
+                print("perform unwind segue Cancel")
+            } else if identifier == "Save" {
+                print("perform unwind segue Save")
+            }
+        }
+        
+    }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
