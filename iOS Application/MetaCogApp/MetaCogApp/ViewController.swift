@@ -36,11 +36,11 @@ class ViewController: UIViewController {
             
             FIRAuth.auth()?.signIn(withEmail: (email?.text)!, password: (password?.text)!, completion: { (user, error) in
                 
-                if let error = error { // if != nil
+                if let error = error {
                     print(error)
                 }
                 
-                
+                self.performSegue(withIdentifier: "loggedIn", sender: AnyObject.self)
             })
         })
         )
@@ -76,6 +76,7 @@ class ViewController: UIViewController {
                 if let error = error {
                     print(error)
                 }
+                self.performSegue(withIdentifier: "loggedIn", sender: AnyObject.self)
             })
         }))
         

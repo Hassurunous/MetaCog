@@ -15,7 +15,7 @@ struct Posts {
     let userName: String
     let databaseReference: FIRDatabaseReference?
     
-    init(title: String = "", content: String, userName: String) {
+    init(title: String, content: String, userName: String) {
         self.title = title
         self.content = content
         self.userName = userName

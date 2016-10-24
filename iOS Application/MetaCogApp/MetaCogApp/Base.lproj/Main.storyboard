@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tms-mv-oca">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -57,6 +57,9 @@
                             <constraint firstItem="WK9-FJ-V4D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rWd-X8-Yv4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="tms-mv-oca" kind="show" identifier="loggedIn" id="89w-0K-m9D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,6 +100,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contentLabel" destination="88f-RF-S1d" id="7F6-nG-1K6"/>
+                                    <outlet property="titleLabel" destination="GxG-TK-XFW" id="aVU-X4-J20"/>
                                     <segue destination="nzm-d2-VF9" kind="show" identifier="postsAndCommentsSegue" id="GCr-b1-RtZ"/>
                                 </connections>
                             </tableViewCell>
@@ -110,76 +115,19 @@
                     <navigationItem key="navigationItem" title="MetaCog" id="TNa-3O-G54">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g6N-Nt-9oC">
                             <connections>
-                                <segue destination="VNx-Vl-AJJ" kind="show" identifier="addPostsSegue" id="VeR-5b-KUY"/>
+                                <action selector="addButton:" destination="okp-iG-vtX" id="fr2-AW-jSL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gA-Ev-Sdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3006" y="134"/>
+            <point key="canvasLocation" x="1287" y="860"/>
         </scene>
         <!--MetaCog-->
-        <scene sceneID="rTm-K7-Ydq">
-            <objects>
-                <viewController id="VNx-Vl-AJJ" customClass="AddPostViewController" customModule="MetaCogApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JLQ-tr-Kmb"/>
-                        <viewControllerLayoutGuide type="bottom" id="g5M-b5-Ixn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="s5s-oP-eXE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-em-ANo">
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FR9-dN-ztf">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="g5M-b5-Ixn" firstAttribute="top" secondItem="FR9-dN-ztf" secondAttribute="bottom" constant="173" id="OtU-lO-8fB"/>
-                            <constraint firstItem="gbm-em-ANo" firstAttribute="top" secondItem="JLQ-tr-Kmb" secondAttribute="bottom" constant="8" symbolic="YES" id="Oum-Sr-2ai"/>
-                            <constraint firstItem="gbm-em-ANo" firstAttribute="trailing" secondItem="FR9-dN-ztf" secondAttribute="trailing" id="Sc9-GT-D5E"/>
-                            <constraint firstItem="gbm-em-ANo" firstAttribute="leading" secondItem="FR9-dN-ztf" secondAttribute="leading" id="bHS-mi-end"/>
-                            <constraint firstItem="FR9-dN-ztf" firstAttribute="top" secondItem="gbm-em-ANo" secondAttribute="bottom" constant="8" symbolic="YES" id="f1s-Au-suS"/>
-                            <constraint firstItem="gbm-em-ANo" firstAttribute="trailing" secondItem="s5s-oP-eXE" secondAttribute="trailingMargin" id="i2V-EE-7pv"/>
-                            <constraint firstItem="gbm-em-ANo" firstAttribute="leading" secondItem="s5s-oP-eXE" secondAttribute="leadingMargin" id="jcl-vt-SFl"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="MetaCog" id="FFA-YF-jo8">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="seK-YT-j3Y">
-                            <connections>
-                                <action selector="cancelButton:" destination="VNx-Vl-AJJ" id="OpS-Kd-MDt"/>
-                                <segue destination="ksN-IV-w5B" kind="unwind" identifier="Cancel" unwindAction="unwindToMainViewController:" id="P0d-AK-YGw"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="jHD-vb-4wp">
-                            <connections>
-                                <action selector="saveButton:" destination="VNx-Vl-AJJ" id="FkT-8R-D2E"/>
-                                <segue destination="ksN-IV-w5B" kind="unwind" identifier="Save" unwindAction="unwindToMainViewController:" id="a6g-Ou-YyO"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9aH-R3-QFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ksN-IV-w5B" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3781.5999999999999" y="-148.87556221889056"/>
-        </scene>
-        <!--Post And Comments Controller-->
         <scene sceneID="d36-Ze-2JX">
             <objects>
-                <viewController id="nzm-d2-VF9" customClass="PostAndCommentsController" customModule="MetaCogApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MetaCog" id="nzm-d2-VF9" customClass="PostAndCommentsController" customModule="MetaCogApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H2S-rr-80G"/>
                         <viewControllerLayoutGuide type="bottom" id="hZX-YG-lq6"/>
@@ -234,10 +182,20 @@
                             <constraint firstItem="hZX-YG-lq6" firstAttribute="top" secondItem="s7Q-q0-IeV" secondAttribute="bottom" constant="10" id="zqq-6L-Sh8"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="Tfj-bm-Acg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="AXC-vF-KRV">
+                            <connections>
+                                <segue destination="dFK-8e-6zd" kind="unwind" identifier="Cancel" unwindAction="unwindToMainViewController:" id="9ak-2K-6pO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPE-Zp-EVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dFK-8e-6zd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3775" y="555"/>
+            <point key="canvasLocation" x="2148" y="865"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7nr-kN-ayb">
@@ -274,7 +232,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qk4-Ms-avs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2165.5999999999999" y="135.38230884557723"/>
+            <point key="canvasLocation" x="570" y="865"/>
         </scene>
     </scenes>
 </document>
