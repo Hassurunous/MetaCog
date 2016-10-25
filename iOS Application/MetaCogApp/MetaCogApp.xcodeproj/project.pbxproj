@@ -10,6 +10,7 @@
 		2A3D3C91F5BDFB419F496E79 /* Pods_MetaCogApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F38C2B7FE84046D4825ED56 /* Pods_MetaCogApp.framework */; };
 		C6434F531DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */; };
 		C6434F551DBD74E800DB7FB9 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6434F541DBD74E800DB7FB9 /* Posts.swift */; };
+		C6FB88651DC00E9000AA160E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB88641DC00E9000AA160E /* CommentCell.swift */; };
 		CC9CB1391DB96EF4001AF6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */; };
 		CC9CB13B1DB96EF4001AF6C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */; };
 		CC9CB13E1DB96EF4001AF6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9CB13C1DB96EF4001AF6C5 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsAndCommentsController.swift; sourceTree = "<group>"; };
 		C6434F541DBD74E800DB7FB9 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		C6FB88631DBEA29600AA160E /* MetaCogApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetaCogApp.entitlements; sourceTree = "<group>"; };
+		C6FB88641DC00E9000AA160E /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		CC9CB1351DB96EF4001AF6C5 /* MetaCogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaCogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				CC9CB13F1DB96EF4001AF6C5 /* Assets.xcassets */,
 				CC9CB1411DB96EF4001AF6C5 /* LaunchScreen.storyboard */,
 				CC9CB1441DB96EF4001AF6C5 /* Info.plist */,
+				C6FB88641DC00E9000AA160E /* CommentCell.swift */,
 			);
 			path = MetaCogApp;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				C6434F531DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift in Sources */,
 				CC9CB1391DB96EF4001AF6C5 /* AppDelegate.swift in Sources */,
 				C6434F551DBD74E800DB7FB9 /* Posts.swift in Sources */,
+				C6FB88651DC00E9000AA160E /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

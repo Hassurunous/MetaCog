@@ -23,16 +23,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if let user = FIRAuth.auth()?.currentUser {
-            print("\n\n\n")
-            print(user.email)
-            print("\n\n\n")
-
-            
-        }
-    }
-
+    
     
     
     @IBAction func logInUser(_ sender: AnyObject) {

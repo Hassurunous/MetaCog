@@ -19,6 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FIRApp.configure()
+        
+        if let user = FIRAuth.auth()?.currentUser
+        {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController")
+            self.window?.rootViewController = controller
+            self.window?.makeKeyAndVisible()
+        }
+        else
+        {
+            let loginStoryboard = UIStoryboard(name: "SignupLogin", bundle: nil)
+            let controller = loginStoryboard.instantiateViewController(withIdentifier: "ViewController")
+            self.window?.rootViewController = controller
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 

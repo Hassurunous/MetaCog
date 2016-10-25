@@ -103,8 +103,18 @@ class MainViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            if identifier == "postsAndCommentsSegue" {
+            if identifier == "commentSegue" {
                 print("users want to add some comments")
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let destController = segue.destination as! PostAndCommentsController
+                    
+                    destController.username = posts[indexPath.row].userName
+                    destController.content = posts[indexPath.row].content
+                    destController.postTitle = posts[indexPath.row].title
+                    
+
+                }
+                
             }else if identifier == "Cancel" {
                 print("perform unwind segue Cancel")
             }
