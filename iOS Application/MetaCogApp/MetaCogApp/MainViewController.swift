@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Foundation
 import FirebaseDatabase
 import FirebaseAuth
 
 
 class MainViewController: UITableViewController {
     //MainViewController Class is a UITableViewController sub-class which will later dispaly the users posts.
+    
+    
     
     var databaseReference: FIRDatabaseReference!
     var posts = [Posts]()
@@ -44,28 +47,31 @@ class MainViewController: UITableViewController {
     
         
     @IBAction func addButton(_ sender: AnyObject) {
-        let currentUser = FIRAuth.auth()?.currentUser?.email
-        let userAlert = UIAlertController(title: "Post", message: "Enter your title and assumption", preferredStyle: .alert)
+        
+        let userName = FIRAuth.auth()?.currentUser?.email
+        
+        let userAlert = UIAlertController(title: "New Post", message: "Enter you post here!", preferredStyle: .alert)
+        
         userAlert.addTextField { (titleTextField) in
-            titleTextField.placeholder = "Enter your title"
+            titleTextField.placeholder = "Enter your title."
         }
+        
         userAlert.addTextField { (contentTextField) in
-            contentTextField.placeholder = "Enter your assumption"
+            contentTextField.placeholder = "Enter your content."
         }
+        
         userAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (action) in
-            let titleContentText = userAlert.textFields?.first?.text!
-            let contentText = userAlert.textFields?.first?.text!
-            let post = Posts(title: titleContentText!, content: contentText!, userName: currentUser!)
-            let titleRef = self.databaseReference.child((titleContentText?.lowercased())!)
-            let contentRef = self.databaseReference.child((contentText?.lowercased())!)
+            let titleText = userAlert.textFields?.first
+            let contentText = userAlert.textFields?.last
             
+            let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!)
             
-            titleRef.setValue(post.toAnyObject())
-            contentRef.setValue(post.toAnyObject())
+            let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
+            postReference.setValue(post.toAnyObject())
+            
         }))
         
         self.present(userAlert, animated: true, completion: nil)
-        
         
     }
 

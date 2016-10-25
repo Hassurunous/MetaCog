@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Foundation
 import FirebaseDatabase
 
 struct Posts {
+    let key: String
     let title: String
     let content: String
-    let userName: String
+    let userName: String!
     let databaseReference: FIRDatabaseReference?
     
-    init(title: String, content: String, userName: String) {
+    init(key: String = "", title: String, content: String, userName: String) {
+        self.key = key
         self.title = title
         self.content = content
         self.userName = userName
@@ -23,10 +26,21 @@ struct Posts {
     }
     
     init(snapshot: FIRDataSnapshot) {
-        title = snapshot.key
+        key = snapshot.key
         databaseReference = snapshot.ref
         
         let i = snapshot.value as! NSDictionary
+        print("\n\n\n")
+        print(i)
+        print("---------------")
+        print("\n\n\n")
+        
+        if let titleContent = i["title"] as? String {
+            title = titleContent
+        } else {
+            title = ""
+        }
+
         
         if let postContent = i["content"] as? String {
             content = postContent
@@ -43,6 +57,6 @@ struct Posts {
     }
     
     func toAnyObject() -> NSDictionary {
-        return ["content": content, "userName": userName]
+        return ["title": title, "content": content, "userName": userName]
     }
 }

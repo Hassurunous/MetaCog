@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
 class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let user = FIRAuth.auth()?.currentUser {
+            print("\n\n\n")
+            print(user.email)
+            print("\n\n\n")
+
+            
+        }
+    }
 
     
-    
-    // MARK: - IBActions
     
     @IBAction func logInUser(_ sender: AnyObject) {
         
@@ -32,15 +51,21 @@ class ViewController: UIViewController {
         
         loginAlert.addAction(UIAlertAction(title: "log in", style: .default, handler: { (action) in
             let email = loginAlert.textFields?.first
-            let password = loginAlert.textFields?.first
+            let password = loginAlert.textFields?.last
             
             FIRAuth.auth()?.signIn(withEmail: (email?.text)!, password: (password?.text)!, completion: { (user, error) in
                 
                 if let error = error {
-                    print(error)
+                    print("\n\n\n")
+                    print(error.localizedDescription)
+                    print("\n\n\n")
+                    return
+                } else {
+                    self.performSegue(withIdentifier: "loggedIn", sender: nil)
                 }
                 
-                self.performSegue(withIdentifier: "loggedIn", sender: AnyObject.self)
+                
+                
             })
         })
         )
@@ -70,13 +95,20 @@ class ViewController: UIViewController {
         
         signUpAlert.addAction(UIAlertAction(title: "sign up", style: .default, handler: { (action) in
             let email = signUpAlert.textFields?.first
-            let password = signUpAlert.textFields?.first
+            let password = signUpAlert.textFields?.last
             
             FIRAuth.auth()?.createUser(withEmail: (email?.text)!, password: (password?.text)!, completion: { (user, error) in
+                
                 if let error = error {
-                    print(error)
+                    print(error.localizedDescription)
+                    return
+                } else {
+                    self.performSegue(withIdentifier: "loggedIn", sender: nil)
+
+                    
+                    
                 }
-                self.performSegue(withIdentifier: "loggedIn", sender: AnyObject.self)
+                
             })
         }))
         
@@ -91,17 +123,13 @@ class ViewController: UIViewController {
     }
    
     
+    func signedIn(_ user: FIRUser?) {
+        
+        
+        
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
 
 }
 
