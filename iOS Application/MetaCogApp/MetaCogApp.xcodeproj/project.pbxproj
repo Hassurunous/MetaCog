@@ -154,7 +154,7 @@
 				TargetAttributes = {
 					CC9CB1341DB96EF4001AF6C5 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = JM33QBQ4S7;
+						DevelopmentTeam = TRR5Q7F2CV;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -381,7 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MetaCogApp/MetaCogApp.entitlements;
-				DEVELOPMENT_TEAM = JM33QBQ4S7;
+				DEVELOPMENT_TEAM = TRR5Q7F2CV;
 				INFOPLIST_FILE = MetaCogApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PielDeJaguar.MetaCogApp;
@@ -396,7 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MetaCogApp/MetaCogApp.entitlements;
-				DEVELOPMENT_TEAM = JM33QBQ4S7;
+				DEVELOPMENT_TEAM = TRR5Q7F2CV;
 				INFOPLIST_FILE = MetaCogApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PielDeJaguar.MetaCogApp;

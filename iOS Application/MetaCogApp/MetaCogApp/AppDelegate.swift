@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else
         {
-            let loginStoryboard = UIStoryboard(name: "SignupLogin", bundle: nil)
+            let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = loginStoryboard.instantiateViewController(withIdentifier: "ViewController")
             self.window?.rootViewController = controller
             self.window?.makeKeyAndVisible()
