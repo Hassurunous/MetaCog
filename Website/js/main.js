@@ -119,3 +119,11 @@ btnOffset();
 $(window).resize(function() {
     btnOffset();
 });
+
+
+// Scrolling activity. Smooth scroll from navigation.
+function scrollTo(element) {
+    $('html, body').animate({
+        scrollTop: $("#" + element).offset().top
+    }, 1500);
+  }

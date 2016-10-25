@@ -6,29 +6,28 @@
         <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
     </head>
     <body>
+        <div class="backgroundImg">
+            <!-- <img src="img/logo.png" alt="" /> -->
+        </div>
         <!-- Fixed title and navigation bar to top of screen, even when scrolling. -->
         <div class="titlebar">
-            <h1>MetaCog Placeholder Title</h1>
             <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#download">Download</a>
-                <a href="#contact">Contact Us</a>
+                <a href="#home" onclick="scrollTo('home'); return false;">Home</a>
+                <a href="#about" onclick="scrollTo('about'); return false;">About</a>
+                <a href="#download" onclick="scrollTo('download'); return false;">Download</a>
+                <a href="#contact" onclick="scrollTo('contact'); return false;">Contact Us</a>
             </nav>
         </div>
         <!-- First descriptional div. Should contain product images, including logo, name, and app image, and a short tagline about the application. -->
         <div id="home" class="anchor"></div>
         <div class="section mainTitle">
-            <p class="placeholderText">
-                Main Product Image Here
-            </p>
         </div>
         <!-- This section is recommended to be a collection of slides describing the purpose and functionality of the app, as well as community guidelines. -->
         <div id="about" class="anchor"></div>
         <div class="section productSlides">
             <h2>Preview Pane Placeholder Title</h2>
             <div class="container">
-                <p class="placeholderText">
+                <p class="sectionText">
                     Product Preview Slider Tabs Here
                 </p>
                 <div id="img1" class="sliderImg">
@@ -59,8 +58,9 @@
         <div id="contact" class="anchor"></div>
         <div class="section contact">
             <h2>Contact Us</h2>
-            <p class="placeholderText">
-                Contact Information
+            <img src="img/team.jpeg" alt="" />
+            <p class="sectionText">
+                MetaCogTeam@gmail.com
             </p>
         </div>
     <!-- Imported jquery and handlebars in case those are required. Suggest removal if unused. -->
