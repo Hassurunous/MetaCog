@@ -14,6 +14,7 @@ class CustomPostCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    
+    @IBOutlet weak var userProfilePicture: UIImageView!
 }

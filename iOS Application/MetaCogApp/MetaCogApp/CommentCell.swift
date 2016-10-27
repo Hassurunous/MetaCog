@@ -21,4 +21,9 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     
     @IBOutlet weak var postTitle: UILabel!
+    
+    
+    
+    
 }
+

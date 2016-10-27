@@ -15,13 +15,17 @@ class PostAndCommentsController: UITableViewController {
     var userImage: String?
     var content: String?
     var postTitle: String?
+    var dateString: String?
+    
+    
     
     
     
     
     
     override func viewDidLoad() {
-        //
+        super.viewDidLoad()
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +35,11 @@ class PostAndCommentsController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let date = NSDate().timeIntervalSince1970
+        let formatter = DateFormatter()
+        
+        formatter.timeStyle = .short
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "postDetailCell", for: indexPath) as! CommentCell
         
         cell.usernameLabel?.text = username
@@ -38,6 +47,8 @@ class PostAndCommentsController: UITableViewController {
         cell.userImage?.image = UIImage(named: "mac_os")
         cell.postTextView.text = content
         cell.postTitle?.text = postTitle
+        cell.timePostLabel?.text = ""
+        
         
         return cell
     }

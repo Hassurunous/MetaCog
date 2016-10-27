@@ -97,6 +97,7 @@
 				C6FB88631DBEA29600AA160E /* MetaCogApp.entitlements */,
 				CCC876231DB985C500F93E81 /* GoogleService-Info.plist */,
 				CCC876211DB9796C00F93E81 /* CustomPostCell.swift */,
+				C6FB88641DC00E9000AA160E /* CommentCell.swift */,
 				CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */,
 				CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */,
 				CC9CB14A1DB973FB001AF6C5 /* MainViewController.swift */,
@@ -105,7 +106,6 @@
 				CC9CB13F1DB96EF4001AF6C5 /* Assets.xcassets */,
 				CC9CB1411DB96EF4001AF6C5 /* LaunchScreen.storyboard */,
 				CC9CB1441DB96EF4001AF6C5 /* Info.plist */,
-				C6FB88641DC00E9000AA160E /* CommentCell.swift */,
 			);
 			path = MetaCogApp;
 			sourceTree = "<group>";

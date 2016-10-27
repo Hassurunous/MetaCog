@@ -27,10 +27,17 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         databaseReference = FIRDatabase.database().reference().child("post-item")
         // Do any additional setup after loading the view.
         
         startObservingDB()
+        
+        tableView.estimatedRowHeight = 40.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,6 +104,10 @@ class MainViewController: UITableViewController {
             print(error)
         }
     }
+    
+    func setupViews() {
+        
+    }
 
     
    
@@ -108,9 +119,15 @@ class MainViewController: UITableViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let destController = segue.destination as! PostAndCommentsController
                     
+                    let date = NSDate()
+                    let formatter = DateFormatter()
+                    formatter.timeStyle = .short
+                    
                     destController.username = posts[indexPath.row].userName
                     destController.content = posts[indexPath.row].content
                     destController.postTitle = posts[indexPath.row].title
+                    destController.dateString = formatter.string(from: date as Date)
+                    
                     
 
                 }
@@ -135,7 +152,6 @@ class MainViewController: UITableViewController {
         let post = posts[row]
         cell.titleLabel.text = post.title
         cell.contentLabel.text = post.content
-    
         
         return cell
     }
