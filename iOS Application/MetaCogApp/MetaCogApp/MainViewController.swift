@@ -24,6 +24,8 @@ class MainViewController: UITableViewController {
         
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,26 +36,32 @@ class MainViewController: UITableViewController {
         
         startObservingDB()
         
-        tableView.estimatedRowHeight = 40.0
+        tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        tableView.reloadData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
-            if let user = user {
-                print("welcome \(user.email)")
-                self.startObservingDB()
-            } else {
-                print("no user id")
-            }
-        })
+       self.tableView.reloadData()
     }
 
     
+    @IBAction func ProfileButton(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "Profile", sender: nil)
+    
+    }
+   
         
     @IBAction func addButton(_ sender: AnyObject) {
+        
+        
+        let date = NSDate()
+        let formatter = DateFormatter()
+        formatter.dateFormat  = "yyyy-MM-dd HH:mm:ss ZZZ"
+        let defaultTimeZone = formatter.string(from: date as Date)
+        
+        
         
         let userName = FIRAuth.auth()?.currentUser?.email
         
@@ -68,19 +76,35 @@ class MainViewController: UITableViewController {
         }
         
         userAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (action) in
-            let titleText = userAlert.textFields?.first
-            let contentText = userAlert.textFields?.last
             
-            let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!)
-            
-            let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
-            postReference.setValue(post.toAnyObject())
+            if userAlert.textFields?.first == nil || userAlert.textFields?.last == nil {
+                print("\n\n\n")
+                print("")
+                print("\n\n\n")
+                
+            } else {
+//                let titleText = userAlert.textFields?.first
+//                let contentText = userAlert.textFields?.last
+//                
+//                
+//                let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!, timeStamp: defaultTimeZone)
+//                
+//                let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
+//                postReference.setValue(post.toAnyObject())
+
+            }
             
         }))
         
         self.present(userAlert, animated: true, completion: nil)
         
     }
+    
+    func initObserver() {
+        
+    }
+    
+    
 
     
     override func didReceiveMemoryWarning() {

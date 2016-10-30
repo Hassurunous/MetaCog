@@ -20,12 +20,21 @@ class PostAndCommentsController: UITableViewController {
     
     
     
-    
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight  = UITableViewAutomaticDimension
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,10 +53,9 @@ class PostAndCommentsController: UITableViewController {
         
         cell.usernameLabel?.text = username
         cell.timePostLabel?.text = timeString
-        cell.userImage?.image = UIImage(named: "mac_os")
-        cell.postTextView.text = content
-        cell.postTitle?.text = postTitle
-        cell.timePostLabel?.text = ""
+        cell.contentPostLabel.text = content
+        cell.titlePostLabel.text = postTitle
+        cell.timePostLabel?.text = "Date"
         
         
         return cell

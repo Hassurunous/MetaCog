@@ -16,11 +16,15 @@ class CommentCell: UITableViewCell {
     
     @IBOutlet weak var timePostLabel: UILabel!
     
-    @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var titlePostLabel: UILabel!
     
-    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var contentPostLabel: UILabel!
     
-    @IBOutlet weak var postTitle: UILabel!
+    
+    @IBOutlet weak var userImageView: UIImageView!
+    
+    
+    // usernameLabel, timePostLabel, postTextView, userImage, postTitle
     
     
     
