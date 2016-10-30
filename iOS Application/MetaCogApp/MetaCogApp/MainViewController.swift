@@ -77,21 +77,37 @@ class MainViewController: UITableViewController {
         
         userAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (action) in
             
-            if userAlert.textFields?.first == nil || userAlert.textFields?.last == nil {
+            
+            
+            let titleField = userAlert.textFields?.first
+            let contentField = userAlert.textFields?.last
+            
+            if ((titleField?.text?.isEmpty)! || (contentField?.text?.isEmpty)!) {
                 print("\n\n\n")
-                print("")
+                print("ERROR MOTHERFUCKERF")
                 print("\n\n\n")
                 
+                let emptyFieldsAlert = UIAlertController(title: "Empty Fields", message: "Please fill in all fields in order to proceed", preferredStyle: .alert)
+                
+                
+                emptyFieldsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(emptyFieldsAlert, animated: true, completion: nil)
+                
+                
+                
+                
             } else {
-//                let titleText = userAlert.textFields?.first
-//                let contentText = userAlert.textFields?.last
-//                
-//                
-//                let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!, timeStamp: defaultTimeZone)
-//                
-//                let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
-//                postReference.setValue(post.toAnyObject())
+                let titleText = userAlert.textFields?.first
+                let contentText = userAlert.textFields?.last
+                
+                let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!, timeStamp: defaultTimeZone)
+                let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
+                postReference.setValue(post.toAnyObject())
+                
+                self.tableView.reloadData()
 
+                
             }
             
         }))
@@ -100,9 +116,13 @@ class MainViewController: UITableViewController {
         
     }
     
-    func initObserver() {
-        
-    }
+    
+//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if scrollView.contentOffset.y >= scrollView.contentSize.height - self.view.frame.size.height * 2 {
+//                self.loadMore()
+//        }
+//    }
+    
     
     
 
@@ -111,6 +131,7 @@ class MainViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func startObservingDB() {
         databaseReference.observe(.value, with: { (snapshot) in
@@ -176,6 +197,7 @@ class MainViewController: UITableViewController {
         let post = posts[row]
         cell.titleLabel.text = post.title
         cell.contentLabel.text = post.content
+        cell.dateLabel.text = post.timeStamp
         
         return cell
     }
