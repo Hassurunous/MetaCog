@@ -6,9 +6,10 @@
 //  Copyright © 2016 PielDeJaguar. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 struct User {
     let uid: String
