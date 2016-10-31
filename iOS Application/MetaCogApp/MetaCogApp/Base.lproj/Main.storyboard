@@ -19,7 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHI-bJ-myS">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHI-bJ-myS">
+                                <frame key="frameInset" minX="113" minY="600" width="149" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="g9k-sf-Oy2"/>
                                 </constraints>
@@ -39,16 +40,8 @@
                                     <action selector="signUpUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncP-Vh-TJb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MetaCog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK9-FJ-V4D">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="vVJ-QL-VD8"/>
-                                    <constraint firstAttribute="width" constant="98" id="yTG-41-QS3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHi-Rh-AjA" customClass="MaterialButton">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHi-Rh-AjA" customClass="Button" customModule="Material">
+                                <frame key="frameInset" minX="113" minY="560" width="149" height="32"/>
                                 <color key="backgroundColor" red="0.26423180103302002" green="0.093011371791362762" blue="0.47027403116226196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="X2a-1r-WgU"/>
@@ -57,37 +50,70 @@
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="LOG IN"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="pulseOpacity">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
+                                        <color key="value" red="0.14250707430000001" green="0.15628064780000001" blue="1" alpha="0.75301724140000004" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logInUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YxK-Dc-9Mr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share your words to the world!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvH-v2-CkU">
-                                <frame key="frameInset" minX="61" minY="416" width="252" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MetacogLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Fk5-VV-AvT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="MetacogLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Fk5-VV-AvT">
+                                <frame key="frameInset" minX="67" minY="106" width="240" height="217"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="217" id="Mxv-Sb-Pr3"/>
                                     <constraint firstAttribute="width" constant="240" id="i2B-Si-tzi"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mu-7q-UsZ" customClass="TextField" customModule="Material">
+                                <frame key="frameInset" minX="67" minY="383" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="E-mail"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="metacogName" translatesAutoresizingMaskIntoConstraints="NO" id="0Ea-LJ-8lt">
+                                <frame key="frameInset" minX="90" minY="50" width="194" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nb-74-qdy" customClass="TextField" customModule="Material">
+                                <frame key="frameInset" minX="67" minY="454" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FHI-bJ-myS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9da-6s-YSe"/>
                             <constraint firstItem="jHi-Rh-AjA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AlO-si-OEP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FHI-bJ-myS" secondAttribute="bottom" constant="80" id="IHU-ef-ote"/>
-                            <constraint firstItem="WK9-FJ-V4D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="O81-wq-MSb"/>
                             <constraint firstItem="FHI-bJ-myS" firstAttribute="top" secondItem="jHi-Rh-AjA" secondAttribute="bottom" constant="42" id="OzW-OG-w7f"/>
                             <constraint firstItem="Fk5-VV-AvT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y3e-WL-Zzj"/>
                             <constraint firstItem="Fk5-VV-AvT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-45" id="h6E-4K-TGa"/>
-                            <constraint firstItem="WK9-FJ-V4D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rWd-X8-Yv4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="0mu-7q-UsZ" id="BxB-SH-Apa"/>
+                        <outlet property="passwordField" destination="8nb-74-qdy" id="mjT-X2-vUW"/>
                         <segue destination="tms-mv-oca" kind="show" identifier="loggedIn" id="89w-0K-m9D"/>
                     </connections>
                 </viewController>
@@ -108,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zci-G3-Uzy" id="0ot-ZU-iWf">
-                                    <frame key="frameInset" width="375" height="125.5"/>
+                                    <frame key="frameInset" width="375" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="upv-QV-VtN">
@@ -248,7 +274,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="336"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EQR-q3-LxK" id="Ag8-F9-2mz">
-                                    <frame key="frameInset" width="375" height="335.5"/>
+                                    <frame key="frameInset" width="375" height="335"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkG-Zk-Nej">
@@ -345,7 +371,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JQm-Ip-hgS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="2jm-1P-rPS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kja-Iv-fcK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kja-Iv-fcK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -363,7 +389,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="98C-Cn-pWg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yck-pc-Y0y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yck-pc-Y0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -379,5 +405,6 @@
     </scenes>
     <resources>
         <image name="MetacogLogo" width="340" height="480"/>
+        <image name="metacogName" width="222" height="65"/>
     </resources>
 </document>

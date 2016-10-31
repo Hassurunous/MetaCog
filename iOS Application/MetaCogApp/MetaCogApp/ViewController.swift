@@ -13,6 +13,9 @@ import FirebaseDatabase
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,52 +26,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
     @IBAction func logInUser(_ sender: AnyObject) {
-        
-        let loginAlert = UIAlertController(title: "Log in", message: "Please log in", preferredStyle: .alert)
-        
-        loginAlert.addTextField { (emailField) in
-            emailField.placeholder = "email"
-        }
-        
-        loginAlert.addTextField { (passwordField) in
-            passwordField.isSecureTextEntry = true
-            passwordField.placeholder = "password"
             
-        }
-        
-        loginAlert.addAction(UIAlertAction(title: "log in", style: .default, handler: { (action) in
-            let email = loginAlert.textFields?.first
-            let password = loginAlert.textFields?.last
+        FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
             
-            FIRAuth.auth()?.signIn(withEmail: (email?.text)!, password: (password?.text)!, completion: { (user, error) in
-                
-                if let error = error {
-                    print("\n\n\n")
-                    print(error.localizedDescription)
-                    print("\n\n\n")
-                    return
-                } else {
-                    self.performSegue(withIdentifier: "loggedIn", sender: nil)
-                }
-                
-                
-                
-            })
+            if let error = error {
+                print("\n\n\n")
+                print(error.localizedDescription)
+                print("\n\n\n")
+                return
+            }
+            else {
+                self.performSegue(withIdentifier: "loggedIn", sender: nil)
+            }
         })
-        )
-        
-        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        
-        self.present(loginAlert, animated: true, completion: nil)
-        
-        
     }
-    
     
     @IBAction func signUpUser(_ sender: AnyObject) {
         
@@ -110,17 +82,11 @@ class ViewController: UIViewController {
         
         
         self.present(signUpAlert, animated: true, completion: nil)
-        
     }
    
     
     func signedIn(_ user: FIRUser?) {
         
-        
-        
     }
-    
-    
-
 }
 

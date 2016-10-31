@@ -15,16 +15,12 @@ import FirebaseAuth
 class MainViewController: UITableViewController {
     //MainViewController Class is a UITableViewController sub-class which will later dispaly the users posts.
     
-    
-    
     var databaseReference: FIRDatabaseReference!
     var posts = [Posts]()
     
     @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
         
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +36,6 @@ class MainViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         self.orderByDate()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,8 +50,6 @@ class MainViewController: UITableViewController {
    
         
     @IBAction func addButton(_ sender: AnyObject) {
-        
-        
         let date = NSDate()
         let formatter = DateFormatter()
         formatter.dateFormat  = "yyyy-MM-dd HH:mm:ss ZZZ"
@@ -78,9 +70,6 @@ class MainViewController: UITableViewController {
         }
         
         userAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (action) in
-            
-            
-            
             let titleField = userAlert.textFields?.first
             let contentField = userAlert.textFields?.last
             
@@ -95,11 +84,8 @@ class MainViewController: UITableViewController {
                 emptyFieldsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 
                 self.present(emptyFieldsAlert, animated: true, completion: nil)
-                
-                
-                
-                
-            } else {
+            }
+            else {
                 let titleText = userAlert.textFields?.first
                 let contentText = userAlert.textFields?.last
                 
@@ -145,8 +131,6 @@ class MainViewController: UITableViewController {
     //This function will keep track on which data that changed in the database
 
         func startObservingDB() {
-            
-            
                 databaseReference.observe(.value, with: { (snapshot) in
                 var newPosts = [Posts]()
                 
@@ -178,18 +162,13 @@ class MainViewController: UITableViewController {
                         destController.content = posts[indexPath.row].content
                         destController.postTitle = posts[indexPath.row].title
                         destController.dateString = formatter.string(from: date as Date)
-                        
-                        
-
                     }
                     
                 }else if identifier == "Cancel" {
                     print("perform unwind segue Cancel")
                 }
             }
-            
         }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -207,5 +186,4 @@ class MainViewController: UITableViewController {
         
         return cell
     }
-
 }
