@@ -101,7 +101,7 @@ class MainViewController: UITableViewController {
                 let titleText = userAlert.textFields?.first
                 let contentText = userAlert.textFields?.last
                 
-                let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!, timeStamp: defaultTimeZone)
+                let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, timeStamp: defaultTimeZone, userName: userName!)
                 let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
                 postReference.setValue(post.toAnyObject())
                 
