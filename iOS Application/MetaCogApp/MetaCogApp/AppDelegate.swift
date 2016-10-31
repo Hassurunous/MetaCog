@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        if let user = FIRAuth.auth()?.currentUser
+        if (FIRAuth.auth()?.currentUser) != nil
         {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController")

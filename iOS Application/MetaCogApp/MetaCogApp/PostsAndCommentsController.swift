@@ -44,7 +44,7 @@ class PostAndCommentsController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let date = NSDate().timeIntervalSince1970
+        //let date = NSDate().timeIntervalSince1970
         let formatter = DateFormatter()
         
         formatter.timeStyle = .short

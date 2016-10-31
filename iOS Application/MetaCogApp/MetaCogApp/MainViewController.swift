@@ -39,6 +39,8 @@ class MainViewController: UITableViewController {
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        self.orderByDate()
+        
         
     }
     
@@ -105,7 +107,6 @@ class MainViewController: UITableViewController {
                 let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
                 postReference.setValue(post.toAnyObject())
                 
-                orderByDate()
                 
                 self.tableView.reloadData()
 
@@ -118,12 +119,11 @@ class MainViewController: UITableViewController {
         
     }
     
-    func orderByDate() -> [Posts]{
-        var orderedArray = self.posts.sort(by: { $0.timeStamp < $1.timeStamp })
+    func orderByDate() {
+        self.posts.sort{ $0.timeStamp < $1.timeStamp }
         
         
-        print(orderedArray)
-        return orderedArray
+        print(posts)
     }
     
     
