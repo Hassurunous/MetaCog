@@ -105,6 +105,8 @@ class MainViewController: UITableViewController {
                 let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
                 postReference.setValue(post.toAnyObject())
                 
+                orderByDate()
+                
                 self.tableView.reloadData()
 
                 
@@ -114,6 +116,14 @@ class MainViewController: UITableViewController {
         
         self.present(userAlert, animated: true, completion: nil)
         
+    }
+    
+    func orderByDate() -> [Posts]{
+        var orderedArray = self.posts.sort(by: { $0.timeStamp < $1.timeStamp })
+        
+        
+        print(orderedArray)
+        return orderedArray
     }
     
     
@@ -132,57 +142,53 @@ class MainViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func startObservingDB() {
-        databaseReference.observe(.value, with: { (snapshot) in
-            var newPosts = [Posts]()
-            
-            for post in snapshot.children {
-                let postObject = Posts(snapshot: post as! FIRDataSnapshot)
-                newPosts.append(postObject)
-            }
-            
-            self.posts = newPosts
-            self.tableView.reloadData()
-            
-        }) { (error) in
-            print(error)
-        }
-    }
-    
-    func setupViews() {
-        
-    }
+    //This function will keep track on which data that changed in the database
 
-    
-   
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "commentSegue" {
-                print("users want to add some comments")
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    let destController = segue.destination as! PostAndCommentsController
-                    
-                    let date = NSDate()
-                    let formatter = DateFormatter()
-                    formatter.timeStyle = .short
-                    
-                    destController.username = posts[indexPath.row].userName
-                    destController.content = posts[indexPath.row].content
-                    destController.postTitle = posts[indexPath.row].title
-                    destController.dateString = formatter.string(from: date as Date)
-                    
-                    
-
+        func startObservingDB() {
+            
+            
+                databaseReference.observe(.value, with: { (snapshot) in
+                var newPosts = [Posts]()
+                
+                for post in snapshot.children {
+                    let postObject = Posts(snapshot: post as! FIRDataSnapshot)
+                    newPosts.append(postObject)
                 }
                 
-            }else if identifier == "Cancel" {
-                print("perform unwind segue Cancel")
+                self.posts = newPosts
+                self.tableView.reloadData()
+                
+            }) { (error) in
+                print(error)
             }
         }
         
-    }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let identifier = segue.identifier {
+                if identifier == "commentSegue" {
+                    print("users want to add some comments")
+                    if let indexPath = tableView.indexPathForSelectedRow {
+                        let destController = segue.destination as! PostAndCommentsController
+                        
+                        let date = NSDate()
+                        let formatter = DateFormatter()
+                        formatter.timeStyle = .short
+                        
+                        destController.username = posts[indexPath.row].userName
+                        destController.content = posts[indexPath.row].content
+                        destController.postTitle = posts[indexPath.row].title
+                        destController.dateString = formatter.string(from: date as Date)
+                        
+                        
+
+                    }
+                    
+                }else if identifier == "Cancel" {
+                    print("perform unwind segue Cancel")
+                }
+            }
+            
+        }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

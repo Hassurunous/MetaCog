@@ -15,13 +15,15 @@ struct Posts {
     let title: String
     let content: String
     let userName: String!
+    let timeStamp: String
     let databaseReference: FIRDatabaseReference?
     
-    init(key: String = "", title: String, content: String, userName: String) {
+    init(key: String = "", title: String, content: String, userName: String, timeStamp: String) {
         self.key = key
         self.title = title
         self.content = content
         self.userName = userName
+        self.timeStamp = timeStamp
         self.databaseReference = nil
     }
     
@@ -54,9 +56,15 @@ struct Posts {
             userName = ""
         }
         
+        if let updateTime = i["timeStamp"] as? String {
+            timeStamp = updateTime
+        } else {
+            timeStamp = ""
+        }
+        
     }
     
     func toAnyObject() -> NSDictionary {
-        return ["title": title, "content": content, "userName": userName]
+        return ["title": title, "content": content, "userName": userName, "timeStamp": timeStamp]
     }
 }

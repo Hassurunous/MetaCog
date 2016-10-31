@@ -11,6 +11,7 @@
 		C6434F531DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */; };
 		C6434F551DBD74E800DB7FB9 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6434F541DBD74E800DB7FB9 /* Posts.swift */; };
 		C6FB88651DC00E9000AA160E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB88641DC00E9000AA160E /* CommentCell.swift */; };
+		C6FE37201DC5481F0044981B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FE371F1DC5481F0044981B /* ProfileViewController.swift */; };
 		CC9CB1391DB96EF4001AF6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */; };
 		CC9CB13B1DB96EF4001AF6C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */; };
 		CC9CB13E1DB96EF4001AF6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9CB13C1DB96EF4001AF6C5 /* Main.storyboard */; };
@@ -27,18 +28,19 @@
 		9F38C2B7FE84046D4825ED56 /* Pods_MetaCogApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetaCogApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsAndCommentsController.swift; sourceTree = "<group>"; };
 		C6434F541DBD74E800DB7FB9 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
-		C6FB88631DBEA29600AA160E /* MetaCogApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetaCogApp.entitlements; sourceTree = "<group>"; };
-		C6FB88641DC00E9000AA160E /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		C6FB88631DBEA29600AA160E /* MetaCogApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MetaCogApp.entitlements; path = MetaCogApp/MetaCogApp.entitlements; sourceTree = "<group>"; };
+		C6FB88641DC00E9000AA160E /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentCell.swift; path = MetaCogApp/CommentCell.swift; sourceTree = "<group>"; };
+		C6FE371F1DC5481F0044981B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = MetaCogApp/ProfileViewController.swift; sourceTree = "<group>"; };
 		CC9CB1351DB96EF4001AF6C5 /* MetaCogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaCogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MetaCogApp/AppDelegate.swift; sourceTree = "<group>"; };
 		CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC9CB13D1DB96EF4001AF6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC9CB13F1DB96EF4001AF6C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC9CB1421DB96EF4001AF6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC9CB1441DB96EF4001AF6C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9CB14A1DB973FB001AF6C5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CCC876211DB9796C00F93E81 /* CustomPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPostCell.swift; sourceTree = "<group>"; };
-		CCC876231DB985C500F93E81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CCC876211DB9796C00F93E81 /* CustomPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPostCell.swift; path = MetaCogApp/CustomPostCell.swift; sourceTree = "<group>"; };
+		CCC876231DB985C500F93E81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MetaCogApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCC876261DB9879F00F93E81 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F34473064C9430DC2E620D50 /* Pods-MetaCogApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaCogApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetaCogApp/Pods-MetaCogApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,9 +74,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C6FE37211DC548E30044981B /* cell.swift */ = {
+			isa = PBXGroup;
+			children = (
+				CCC876211DB9796C00F93E81 /* CustomPostCell.swift */,
+				C6FB88641DC00E9000AA160E /* CommentCell.swift */,
+			);
+			name = cell.swift;
+			sourceTree = "<group>";
+		};
 		CC9CB12C1DB96EF3001AF6C5 = {
 			isa = PBXGroup;
 			children = (
+				C6FE371F1DC5481F0044981B /* ProfileViewController.swift */,
+				CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */,
+				C6FB88631DBEA29600AA160E /* MetaCogApp.entitlements */,
+				CCC876231DB985C500F93E81 /* GoogleService-Info.plist */,
+				C6FE37211DC548E30044981B /* cell.swift */,
 				CCC876251DB9879100F93E81 /* Model */,
 				CC9CB1371DB96EF4001AF6C5 /* MetaCogApp */,
 				CC9CB1361DB96EF4001AF6C5 /* Products */,
@@ -94,16 +110,11 @@
 		CC9CB1371DB96EF4001AF6C5 /* MetaCogApp */ = {
 			isa = PBXGroup;
 			children = (
-				C6FB88631DBEA29600AA160E /* MetaCogApp.entitlements */,
-				CCC876231DB985C500F93E81 /* GoogleService-Info.plist */,
-				CCC876211DB9796C00F93E81 /* CustomPostCell.swift */,
-				C6FB88641DC00E9000AA160E /* CommentCell.swift */,
-				CC9CB1381DB96EF4001AF6C5 /* AppDelegate.swift */,
 				CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */,
 				CC9CB14A1DB973FB001AF6C5 /* MainViewController.swift */,
 				C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */,
-				CC9CB13C1DB96EF4001AF6C5 /* Main.storyboard */,
 				CC9CB13F1DB96EF4001AF6C5 /* Assets.xcassets */,
+				CC9CB13C1DB96EF4001AF6C5 /* Main.storyboard */,
 				CC9CB1411DB96EF4001AF6C5 /* LaunchScreen.storyboard */,
 				CC9CB1441DB96EF4001AF6C5 /* Info.plist */,
 			);
@@ -224,7 +235,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9BD90EC222642F6FBB9808FA /* [CP] Copy Pods Resources */ = {
@@ -255,6 +266,7 @@
 				CCC876271DB9879F00F93E81 /* User.swift in Sources */,
 				C6434F531DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift in Sources */,
 				CC9CB1391DB96EF4001AF6C5 /* AppDelegate.swift in Sources */,
+				C6FE37201DC5481F0044981B /* ProfileViewController.swift in Sources */,
 				C6434F551DBD74E800DB7FB9 /* Posts.swift in Sources */,
 				C6FB88651DC00E9000AA160E /* CommentCell.swift in Sources */,
 			);
