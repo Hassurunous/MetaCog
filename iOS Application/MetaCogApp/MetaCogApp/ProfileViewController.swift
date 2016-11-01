@@ -10,6 +10,8 @@ import UIKit
 import FirebaseStorage
 import FirebaseAuth
 
+
+
 class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let storageReference = FIRStorage.storage().reference(forURL: "gs://metacog-57941.appspot.com")

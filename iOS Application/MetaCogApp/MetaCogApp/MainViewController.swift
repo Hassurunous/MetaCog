@@ -18,6 +18,8 @@ class MainViewController: UITableViewController {
     var databaseReference: FIRDatabaseReference!
     var posts = [Posts]()
     
+    
+    
     @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
         
     }
@@ -35,7 +37,7 @@ class MainViewController: UITableViewController {
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        self.orderByDate()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,11 +53,14 @@ class MainViewController: UITableViewController {
         
     @IBAction func addButton(_ sender: AnyObject) {
         let date = NSDate()
-        let formatter = DateFormatter()
-        formatter.dateFormat  = "yyyy-MM-dd HH:mm:ss ZZZ"
-        let defaultTimeZone = formatter.string(from: date as Date)
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
+        let defaultTimeZoneStr = formatter.string(from: date as Date)
         
         
+            
+
+    
         
         let userName = FIRAuth.auth()?.currentUser?.email
         
@@ -75,7 +80,7 @@ class MainViewController: UITableViewController {
             
             if ((titleField?.text?.isEmpty)! || (contentField?.text?.isEmpty)!) {
                 print("\n\n\n")
-                print("ERROR MOTHERFUCKERF")
+                print("ERROR")
                 print("\n\n\n")
                 
                 let emptyFieldsAlert = UIAlertController(title: "Empty Fields", message: "Please fill in all fields in order to proceed", preferredStyle: .alert)
@@ -88,12 +93,13 @@ class MainViewController: UITableViewController {
             else {
                 let titleText = userAlert.textFields?.first
                 let contentText = userAlert.textFields?.last
-                
-                let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!, timeStamp: defaultTimeZone)
+                //change this into the shorter date
+                let post = Posts(title: (titleText?.text)!, content: (contentText?.text)!, userName: userName!, timeStamp: defaultTimeZoneStr)
+                self.posts.append(post)
                 let postReference = self.databaseReference.child((titleText?.text?.lowercased())!)
                 postReference.setValue(post.toAnyObject())
                 
-                
+                self.tableView.insertRows(at: [IndexPath(row: self.posts.count - 1,section: 0)], with: .automatic)
                 self.tableView.reloadData()
 
                 
@@ -105,22 +111,7 @@ class MainViewController: UITableViewController {
         
     }
     
-    func orderByDate() {
-        self.posts.sort{ $0.timeStamp < $1.timeStamp }
         
-        
-        print(posts)
-    }
-    
-    
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y >= scrollView.contentSize.height - self.view.frame.size.height * 2 {
-//                self.loadMore()
-//        }
-//    }
-    
-    
-    
 
     
     override func didReceiveMemoryWarning() {
@@ -161,7 +152,8 @@ class MainViewController: UITableViewController {
                         destController.username = posts[indexPath.row].userName
                         destController.content = posts[indexPath.row].content
                         destController.postTitle = posts[indexPath.row].title
-                        destController.dateString = formatter.string(from: date as Date)
+                        //change this into the shorter date
+                        destController.dateString = ""
                     }
                     
                 }else if identifier == "Cancel" {
@@ -178,11 +170,13 @@ class MainViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! CustomPostCell
         
+        self.posts.sort(by: {$0.timeStamp > $1.timeStamp})
+        
         let row = indexPath.row
         let post = posts[row]
         cell.titleLabel.text = post.title
         cell.contentLabel.text = post.content
-        cell.dateLabel.text = post.timeStamp
+        cell.dateLabel.text = ""
         
         return cell
     }

@@ -31,6 +31,10 @@ class PostAndCommentsController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -53,9 +57,10 @@ class PostAndCommentsController: UITableViewController {
         
         cell.usernameLabel?.text = username
         cell.timePostLabel?.text = timeString
-        cell.contentPostLabel.text = content
+        
+        cell.textview.text = content
         cell.titlePostLabel.text = postTitle
-        cell.timePostLabel?.text = "Date"
+        cell.timePostLabel?.text = ""
         
         
         return cell
