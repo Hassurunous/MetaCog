@@ -114,6 +114,7 @@ nav a:active {
 
 .slider {
     max-width: 1200px;
+    height: calc(100% - 50px);
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -125,6 +126,7 @@ nav a:active {
     position: absolute;
     text-align: center;
     width: 300%;
+    height: 100%;
     z-index: 1;
 }
 
@@ -135,8 +137,8 @@ nav a:active {
     display: inline-block;
     height: calc(100% - 33px);
     z-index: 2;
-    padding-top: 5px;
-    padding-bottom: 5
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .slideBtn {
