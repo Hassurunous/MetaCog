@@ -190,7 +190,7 @@
                                     <outlet property="contentLabel" destination="CVH-9o-mEk" id="tZt-v4-ZXs"/>
                                     <outlet property="dateLabel" destination="Gcu-pw-nwM" id="U63-H6-Fx0"/>
                                     <outlet property="titleLabel" destination="P7S-ur-dCN" id="BMb-vW-Trg"/>
-                                    <outlet property="userProfilePicture" destination="upv-QV-VtN" id="BPk-Ic-Zk8"/>
+                                    <outlet property="userProfilePicture" destination="upv-QV-VtN" id="ieK-0H-gTc"/>
                                     <segue destination="1Yr-Iq-7lv" kind="show" identifier="commentSegue" id="QQe-oO-Les"/>
                                 </connections>
                             </tableViewCell>
@@ -220,7 +220,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gA-Ev-Sdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="858.62068965517244"/>
+            <point key="canvasLocation" x="1254" y="964"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3Ny-zA-tZO">
@@ -254,6 +254,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDf-EM-2vo">
                                 <rect key="frame" x="170" y="383" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="tms-mv-oca" kind="show" identifier="picture" id="WPC-ZN-T7u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMv-bd-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="1631"/>
+            <point key="canvasLocation" x="1236" y="1722"/>
         </scene>
         <!--Post And Comments Controller-->
         <scene sceneID="pgJ-s9-uMT">
@@ -382,7 +385,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBm-Ig-om4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="135"/>
+            <point key="canvasLocation" x="1808" y="134"/>
         </scene>
         <!--Home-->
         <scene sceneID="RbS-BP-oGu">
@@ -401,7 +404,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qk4-Ms-avs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="865"/>
+            <point key="canvasLocation" x="550" y="964"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oid-0R-ZUB">
@@ -419,11 +422,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbc-c6-3ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="549.60000000000002" y="1631.3343328335834"/>
+            <point key="canvasLocation" x="550" y="1722"/>
         </scene>
     </scenes>
     <resources>
         <image name="MetacogLogo" width="340" height="480"/>
         <image name="metacogName" width="222" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="WPC-ZN-T7u"/>
+    </inferredMetricsTieBreakers>
 </document>

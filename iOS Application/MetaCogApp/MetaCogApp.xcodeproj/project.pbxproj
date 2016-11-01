@@ -21,6 +21,7 @@
 		CCC876221DB9796C00F93E81 /* CustomPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC876211DB9796C00F93E81 /* CustomPostCell.swift */; };
 		CCC876241DB985C500F93E81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCC876231DB985C500F93E81 /* GoogleService-Info.plist */; };
 		CCC876271DB9879F00F93E81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC876261DB9879F00F93E81 /* User.swift */; };
+		E7C14B7C1DC8124C00EEABEC /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C14B7B1DC8124C00EEABEC /* Onboarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CCC876211DB9796C00F93E81 /* CustomPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPostCell.swift; path = MetaCogApp/CustomPostCell.swift; sourceTree = "<group>"; };
 		CCC876231DB985C500F93E81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MetaCogApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCC876261DB9879F00F93E81 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E7C14B7B1DC8124C00EEABEC /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F34473064C9430DC2E620D50 /* Pods-MetaCogApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaCogApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetaCogApp/Pods-MetaCogApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				CC9CB13A1DB96EF4001AF6C5 /* ViewController.swift */,
+				E7C14B7B1DC8124C00EEABEC /* Onboarding.storyboard */,
 				CC9CB14A1DB973FB001AF6C5 /* MainViewController.swift */,
 				C6434F521DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift */,
 				CC9CB13F1DB96EF4001AF6C5 /* Assets.xcassets */,
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC9CB1431DB96EF4001AF6C5 /* LaunchScreen.storyboard in Resources */,
+				E7C14B7C1DC8124C00EEABEC /* Onboarding.storyboard in Resources */,
 				CCC876241DB985C500F93E81 /* GoogleService-Info.plist in Resources */,
 				CC9CB1401DB96EF4001AF6C5 /* Assets.xcassets in Resources */,
 				CC9CB13E1DB96EF4001AF6C5 /* Main.storyboard in Resources */,

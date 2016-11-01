@@ -18,11 +18,15 @@ class MainViewController: UITableViewController {
     var databaseReference: FIRDatabaseReference!
     var posts = [Posts]()
     
+    var realImage: UIImage? = UIImage()
+    
     
     
     @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
         
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +115,7 @@ class MainViewController: UITableViewController {
         
     }
     
-        
+    
 
     
     override func didReceiveMemoryWarning() {
@@ -168,12 +172,15 @@ class MainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! CustomPostCell
         
         self.posts.sort(by: {$0.timeStamp > $1.timeStamp})
         
         let row = indexPath.row
         let post = posts[row]
+        cell.imageView?.image = realImage
         cell.titleLabel.text = post.title
         cell.contentLabel.text = post.content
         cell.dateLabel.text = ""

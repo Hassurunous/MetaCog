@@ -11,13 +11,13 @@ import FirebaseStorage
 import FirebaseAuth
 
 
-
 class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    let storageReference = FIRStorage.storage().reference(forURL: "gs://metacog-57941.appspot.com")
+    //let storageReference = FIRStorage.storage().reference(forURL: "gs://metacog-57941.appspot.com")
     
     var imagePicker: UIImagePickerController!
     
+        
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -29,6 +29,15 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "picture" {
+            
+        }
+    }
+    
+   
     
     override func viewDidLoad() {
         
