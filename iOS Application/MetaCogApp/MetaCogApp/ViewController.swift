@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logInUser(_ sender: AnyObject) {
-            
+        
         FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
             
             if let error = error {
@@ -57,7 +57,6 @@ class ViewController: UIViewController {
             passwordField.placeholder = "password"
         }
         
-        
         signUpAlert.addAction(UIAlertAction(title: "sign up", style: .default, handler: { (action) in
             let email = signUpAlert.textFields?.first
             let password = signUpAlert.textFields?.last
@@ -67,25 +66,19 @@ class ViewController: UIViewController {
                 if let error = error {
                     print(error.localizedDescription)
                     return
-                } else {
+                }
+                else {
                     self.performSegue(withIdentifier: "loggedIn", sender: nil)
 
-                    
-                    
                 }
-                
             })
         }))
-        
         
         // MARK: - TODO  How to show sign up action before cancel
         signUpAlert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
         
-        
-        
         self.present(signUpAlert, animated: true, completion: nil)
     }
-   
     
     func signedIn(_ user: FIRUser?) {
         

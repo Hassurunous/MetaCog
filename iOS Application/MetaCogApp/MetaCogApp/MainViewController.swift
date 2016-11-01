@@ -11,7 +11,6 @@ import Foundation
 import FirebaseDatabase
 import FirebaseAuth
 
-
 class MainViewController: UITableViewController {
     //MainViewController Class is a UITableViewController sub-class which will later dispaly the users posts.
     
@@ -20,13 +19,14 @@ class MainViewController: UITableViewController {
     
     var realImage: UIImage? = UIImage()
     
-    
-    
     @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
         
     }
     
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,31 +40,21 @@ class MainViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
        self.tableView.reloadData()
     }
 
-    
     @IBAction func ProfileButton(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "Profile", sender: nil)
-    
     }
    
-        
     @IBAction func addButton(_ sender: AnyObject) {
         let date = NSDate()
         var formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
         let defaultTimeZoneStr = formatter.string(from: date as Date)
-        
-        
-            
-
-    
         
         let userName = FIRAuth.auth()?.currentUser?.email
         
@@ -89,7 +79,6 @@ class MainViewController: UITableViewController {
                 
                 let emptyFieldsAlert = UIAlertController(title: "Empty Fields", message: "Please fill in all fields in order to proceed", preferredStyle: .alert)
                 
-                
                 emptyFieldsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 
                 self.present(emptyFieldsAlert, animated: true, completion: nil)
@@ -105,74 +94,58 @@ class MainViewController: UITableViewController {
                 
                 self.tableView.insertRows(at: [IndexPath(row: self.posts.count - 1,section: 0)], with: .automatic)
                 self.tableView.reloadData()
-
-                
             }
-            
         }))
         
         self.present(userAlert, animated: true, completion: nil)
-        
-    }
-    
-    
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //This function will keep track on which data that changed in the database
-
-        func startObservingDB() {
-                databaseReference.observe(.value, with: { (snapshot) in
-                var newPosts = [Posts]()
-                
-                for post in snapshot.children {
-                    let postObject = Posts(snapshot: post as! FIRDataSnapshot)
-                    newPosts.append(postObject)
-                }
-                
-                self.posts = newPosts
-                self.tableView.reloadData()
-                
-            }) { (error) in
-                print(error)
+    func startObservingDB() {
+            databaseReference.observe(.value, with: { (snapshot) in
+            var newPosts = [Posts]()
+            
+            for post in snapshot.children {
+                let postObject = Posts(snapshot: post as! FIRDataSnapshot)
+                newPosts.append(postObject)
             }
+            
+            self.posts = newPosts
+            self.tableView.reloadData()
+            
+        }) { (error) in
+            print(error)
         }
-        
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let identifier = segue.identifier {
-                if identifier == "commentSegue" {
-                    print("users want to add some comments")
-                    if let indexPath = tableView.indexPathForSelectedRow {
-                        let destController = segue.destination as! PostAndCommentsController
-                        
-                        let date = NSDate()
-                        let formatter = DateFormatter()
-                        formatter.timeStyle = .short
-                        
-                        destController.username = posts[indexPath.row].userName
-                        destController.content = posts[indexPath.row].content
-                        destController.postTitle = posts[indexPath.row].title
-                        //change this into the shorter date
-                        destController.dateString = ""
-                    }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "commentSegue" {
+                print("users want to add some comments")
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let destController = segue.destination as! PostAndCommentsController
                     
-                }else if identifier == "Cancel" {
-                    print("perform unwind segue Cancel")
+                    let date = NSDate()
+                    let formatter = DateFormatter()
+                    formatter.timeStyle = .short
+                    
+                    destController.username = posts[indexPath.row].userName
+                    destController.content = posts[indexPath.row].content
+                    destController.postTitle = posts[indexPath.row].title
+                    //change this into the shorter date
+                    destController.dateString = ""
                 }
+            } else if identifier == "Cancel" {
+                print("perform unwind segue Cancel")
             }
         }
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! CustomPostCell
         
