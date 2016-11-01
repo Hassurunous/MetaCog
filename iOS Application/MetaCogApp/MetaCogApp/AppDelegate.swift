@@ -13,8 +13,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -22,21 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        if (FIRAuth.auth()?.currentUser) != nil
-        {
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController")
-            self.window?.rootViewController = controller
-            self.window?.makeKeyAndVisible()
-        }
-        else
-        {
-            let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = loginStoryboard.instantiateViewController(withIdentifier: "ViewController")
-            self.window?.rootViewController = controller
-            self.window?.makeKeyAndVisible()
-        }
-        
+//        if (FIRAuth.auth()?.currentUser) != nil
+//        {
+//            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let controller = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController")
+//            self.window?.rootViewController = controller
+//            self.window?.makeKeyAndVisible()
+//        }
+//        else
+//        {
+//            let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let controller = loginStoryboard.instantiateViewController(withIdentifier: "ViewController")
+//            self.window?.rootViewController = controller
+//            self.window?.makeKeyAndVisible()
+//        }
+//        
         return true
     }
 

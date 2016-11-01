@@ -43,7 +43,6 @@ struct Posts {
             title = ""
         }
 
-        
         if let postContent = i["content"] as? String {
             content = postContent
         } else {
@@ -61,7 +60,6 @@ struct Posts {
         } else {
             timeStamp = ""
         }
-        
     }
     
     func toAnyObject() -> NSDictionary {

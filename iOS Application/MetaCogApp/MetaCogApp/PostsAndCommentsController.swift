@@ -17,12 +17,6 @@ class PostAndCommentsController: UITableViewController {
     var postTitle: String?
     var dateString: String?
     
-    
-    
-    
-   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,8 +39,6 @@ class PostAndCommentsController: UITableViewController {
         return 1
     }
     
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let date = NSDate().timeIntervalSince1970
         let formatter = DateFormatter()
@@ -61,7 +53,6 @@ class PostAndCommentsController: UITableViewController {
         cell.textview.text = content
         cell.titlePostLabel.text = postTitle
         cell.timePostLabel?.text = ""
-        
         
         return cell
     }

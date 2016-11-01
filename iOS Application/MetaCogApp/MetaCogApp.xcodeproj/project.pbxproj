@@ -22,7 +22,6 @@
 		CCC876241DB985C500F93E81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCC876231DB985C500F93E81 /* GoogleService-Info.plist */; };
 		CCC876271DB9879F00F93E81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC876261DB9879F00F93E81 /* User.swift */; };
 		E7C14B7C1DC8124C00EEABEC /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C14B7B1DC8124C00EEABEC /* Onboarding.storyboard */; };
-		E7C14B7E1DC949A500EEABEC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C14B7D1DC949A500EEABEC /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,6 @@
 		CCC876231DB985C500F93E81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MetaCogApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCC876261DB9879F00F93E81 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E7C14B7B1DC8124C00EEABEC /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		E7C14B7D1DC949A500EEABEC /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		F34473064C9430DC2E620D50 /* Pods-MetaCogApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaCogApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetaCogApp/Pods-MetaCogApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +120,6 @@
 				CC9CB13C1DB96EF4001AF6C5 /* Main.storyboard */,
 				CC9CB1411DB96EF4001AF6C5 /* LaunchScreen.storyboard */,
 				CC9CB1441DB96EF4001AF6C5 /* Info.plist */,
-				E7C14B7D1DC949A500EEABEC /* OnboardingViewController.swift */,
 			);
 			path = MetaCogApp;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 				C6434F531DBD6DBC00DB7FB9 /* PostsAndCommentsController.swift in Sources */,
 				CC9CB1391DB96EF4001AF6C5 /* AppDelegate.swift in Sources */,
 				C6FE37201DC5481F0044981B /* ProfileViewController.swift in Sources */,
-				E7C14B7E1DC949A500EEABEC /* OnboardingViewController.swift in Sources */,
 				C6434F551DBD74E800DB7FB9 /* Posts.swift in Sources */,
 				C6FB88651DC00E9000AA160E /* CommentCell.swift in Sources */,
 			);
